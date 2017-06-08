@@ -1,0 +1,39 @@
+* Icon 图标
+
+** 开发环境中可能遇到的两种 icon 使用方式
+
+1. 成熟的第三方 icon 库
+
+比如 Bootstrap Fontawesome Ionicons 等等等，这些 css 库或有自己的图标字体库，比如
+bootstrap 和 foundation，或本身就是icon 文件的集合，并自带打包好的字体文件，典型一
+些的像 fontawesome 和 ionicons。使用第三方库的好处就是，可以快速开发产品，但是会缺乏
+一定的自由定制能力。一个麻烦的事就是，如果在库中找不到合适的 icon，或是想要将其他的 
+icon 加到现有字体文件中，是一件麻烦事。嘛，这是第三方库的特点。
+
+我们也可以在网站上自由选择一些icon供我们使用，如阿里的[[http://www.iconfont.cn/]]或是
+[[https://icomoon.io/]]都是很不错的选择。由于处理办法和第三方库类似，所以把他们归为一
+类。
+
+
+2. 自己构建源文件或设计师来定制的 icon
+
+一般是设计师创作的一个个的图片源文件，svg png 或是其他格式的 icon。根据产品风格来定制
+icon，也是非常有必要的。但缺点也显而易见，由于只是些原文件，我们需要工具将他们打包在一
+起使用，比如 sprite 或 font 文件。这会带来构建上面的问题。
+
+
+** 配置开发环境下的第三方 icon 库 
+
+对于第三方库来说，开发换进比较简单，毕竟人家已经做好了成品。这里只需要将字体文件配置好
+规则即可。
+
+#+BEGIN_SRC js
+// ..webpack.config.js
+{
+    test: /\.{ttf|eot|woff|woff2}$/,
+    use: 'url-loader'
+}
+#+END_SRC
+
+
+*** 将 svg 源文件前置打包成 sprite
