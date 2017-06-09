@@ -79,10 +79,8 @@ export default () => (
 )
 #+END_SRC
 
-[[https://github.com/yuffiy/note/raw/master/assets/labels/info.svg][INFO]]
-[[INFO][https://github.com/yuffiy/note/raw/master/assets/labels/info.svg]] 
-
-icon 是一个 webpack 别名，这么做的原因是可以选择性的来使用 icon。比如我想使用 ionicons
+[[https://github.com/yuffiy/note][https://github.com/yuffiy/note/raw/master/assets/labels/info.svg]]
+[[http://melpa.org/#/pdf-tools][http://melpa.org/packages/pdf-tools-badge.svg]] icon 是一个 webpack 别名，这么做的原因是可以选择性的来使用 icon。比如我想使用 ionicons
 的 icon 可以写成 ~require('ionicons/src/alert.svg')~。但由于项目需求，现在必须使用
 feather 的 icon，只能改为 ~require('feather/icons/alert.svg')~。所以可以用一个别名
 来引用用到的库。
