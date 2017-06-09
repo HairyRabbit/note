@@ -79,7 +79,7 @@ export default () => (
 )
 #+END_SRC
 
-[[/assets/labels/info.svg][INFO]] 
+[[./assets/labels/info.svg]] 
 
 icon 是一个 webpack 别名，这么做的原因是可以选择性的来使用 icon。比如我想使用 ionicons
 的 icon 可以写成 ~require('ionicons/src/alert.svg')~。但由于项目需求，现在必须使用
