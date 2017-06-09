@@ -23,11 +23,6 @@ icon，也是非常有必要的。但缺点也显而易见，由于只是些原�
 
 
 
-** 一个 Icon 接口的组件
-
-
-
-
 ** 配置开发环境下的第三方 icon 库 
 
 对于第三方库来说，开发换进比较简单，毕竟人家已经做好了成品。这里只需要将字体文件配置好
@@ -84,17 +79,15 @@ export default () => (
 )
 #+END_SRC
 
-icon是一个 webpack 别名，这么做的原因是可以选择性的来使用 icon。比如我想使用 ionicons
-的 icon 可以写成 =require('ionicons/src/alert.svg')=。但由于项目需求，现在必须使用
-feather 的 icon，只能改为 =require('feather/icons/alert.svg')=。所以可以用一个别名
+[[file://assets/labels/info.svg][INFO]] icon 是一个 webpack 别名，这么做的原因是可以选择性的来使用 icon。比如我想使用 ionicons
+的 icon 可以写成 ~require('ionicons/src/alert.svg')~。但由于项目需求，现在必须使用
+feather 的 icon，只能改为 ~require('feather/icons/alert.svg')~。所以可以用一个别名
 来引用用到的库。
 
 #+BEGIN_SRC js
 // ... webpack.dev.config.js
-{
-    alias: {
-        icon: "feather/icons"
-    }
+alias: {
+    icon: "feather/icons"
 }
 #+END_SRC
 
@@ -105,3 +98,13 @@ TODO Multi icon source supports.
 
 
 *** 将 svg 源文件前置打包成 sprite
+
+
+** 一个 Icon 的接口组件
+
+#+BEGIN_SRC js
+interface Icon {
+    name: string,
+    className: string
+}
+#+END_SRC
