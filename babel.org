@@ -1,0 +1,47 @@
+* Babel
+
+
+*** Babel preset-env
+
+[[https://babeljs.io/docs/plugins/preset-env/][preset-env]]
+
+
+*** Babel preset-react
+
+[[https://babeljs.io/docs/plugins/preset-react/][preset-react]]
+
+
+*** Babel Configure
+
+#+BEGIN_SRC js
+{
+  "presets": ["react", ["env", {
+    "target": {
+      "chrome": "latest"
+    },
+    "modules": false,
+    "loose": true
+  }]],
+  "plugins": [
+    "syntax-dynamic-import",
+    "transform-class-properties"
+  ],
+  "env": {
+    "test": {
+      "plugins": ["transform-es2015-modules-commonjs"]
+    }
+  }
+}
+#+END_SRC
+
+
+[[https://github.com/ai/browserslist][browserlist]]
+
+
+#+BEGIN_SRC js
+// node options
+--harmony_dynamic_import
+--harmony_object_rest_spread
+#+END_SRC
+
+
